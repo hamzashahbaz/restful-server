@@ -1,0 +1,26 @@
+{
+	"name": "rest-express-postgres-server",
+	"version": "0.0.1",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon --exec babel-node index.js"
+	},
+	"author": "Hamza Shahbaz",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/cli": "^7.8.4",
+		"@babel/core": "^7.8.6",
+		"@babel/node": "^7.8.4",
+		"@babel/preset-env": "^7.8.6",
+		"@babel/register": "^7.8.6",
+		"dotenv": "^8.2.0",
+		"nodemon": "^2.0.2"
+	},
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"pg": "^8.2.1",
+		"sequelize": "^5.21.9"
+	}
+}

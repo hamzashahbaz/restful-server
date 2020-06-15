@@ -39,15 +39,6 @@ app.use((err, req, res, next) => {
 });
 
 // Listen to requests
-models.mongoose().then(async () => {
-	if (isTest || isProduction) {
-		// reset database
-		await Promise.all([models.User.deleteMany({}), models.Message.deleteMany({})]);
-
-		createUsersWithMessages(new Date());
-	}
-	// Start the server
-	app.listen(process.env.PORT, () => {
-		console.log(`🚀 Server ready at http://localhost:${process.env.PORT}`);
-	});
+models.sequelize.sync({}).then(() => {
+	app.listen({ port: process.env.PORT || 3000 }, () => console.log(`🚀 Server ready at http://localhost:${process.env.PORT || 3000}`));
 });
